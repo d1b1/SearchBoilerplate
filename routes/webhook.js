@@ -33,7 +33,7 @@ module.exports = function(req, res) {
 
 	takeshape(query).then(result => {
 
-		var obj = json.data.getCheese;
+		var obj = result.data.getCheese;
 		obj.objectID = obj._id
 
 		index.addObject(obj, () => {
