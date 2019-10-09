@@ -48,15 +48,15 @@ module.exports = (req, res) => {
 				console.log('Indexed', data);
 				var count = data.objectIDs.length;
 
-				res.status(200).send({ message: `Rebuild all takeshape data to the index ${count}` })
+				res.status(200).send(`Rebuild all takeshape data to the index ${count}`)
 			})
 			.catch(err => {
 				console.log('Got an Eror', err);
-				res.status(500).send({ message: err.message })
+				res.status(500).send(err.message)
 			});
 
 	}).catch(err => {
-		res.status(500).send({ message: err.message })
+		res.status(500).send(err.message)
 	})
 
 
