@@ -29,9 +29,9 @@ var query = `{
 
 module.exports = (req, res) => {
 
-	takeshape(query).then(res => {
+	takeshape(query).then(result => {
 
-		var items = res.data.getCheeseList.items
+		var items = result.data.getCheeseList.items
 		var list = [];
 
 		// Loop the fields and set the data as needed.
