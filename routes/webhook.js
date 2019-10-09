@@ -6,7 +6,6 @@ const TAKESHAPE_PROJECTID = process.env.TAKESHAPE_PROJECTID
 const TAKESHAPE_KEY = process.env.TAKESHAPE_KEY
 const ALGOLIA_APPID = process.env.ALGOLIA_APPID
 const ALGOLIA_ADMIN_KEY = process.env.ALGOLIA_ADMIN_KEY
-
 const client = algoliasearch(ALGOLIA_APPID, ALGOLIA_ADMIN_KEY);
 
 // 	{
@@ -22,8 +21,8 @@ const client = algoliasearch(ALGOLIA_APPID, ALGOLIA_ADMIN_KEY);
 //   }
 // }
 
-exports.handler = function(event, context, callback) {
-	
+module.export = function(event, context, callback) {
+
 		if (event.httpMethod !== "POST") {
 	    return { statusCode: 405, body: "Method Not Allowed" };
 	  }
