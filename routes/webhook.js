@@ -5,6 +5,7 @@ const takeshape = require('../services/takeshape')
 module.exports = function(req, res) {
 
 	// Echo what is happening.
+	var body = req.body
 	console.log('Action', body.action, 'Body', body);
 
 	// Set the index for the content type.
@@ -13,8 +14,7 @@ module.exports = function(req, res) {
 	// If the action is to delete, then we do it now and stop the code.
 	if (body.action === "content:delete") {
 		index.deleteObject(body.data.contentId, () => {
-			res.status(200).send('Removed Index item')
-			return;
+			return res.status(200).send('Removed Index item')
 		})
 	}
 
