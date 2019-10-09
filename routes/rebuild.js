@@ -27,7 +27,7 @@ var query = `{
 	}
 `
 
-module.export = (req, res) => {
+module.exports = (req, res) => {
 
 	takeshape(query).then(res => {
 
