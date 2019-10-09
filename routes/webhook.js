@@ -31,7 +31,7 @@ module.exports = function(req, res) {
 		}
 	}`;
 
-	takeshape.query(query).then(result => {
+	takeshape(query).then(result => {
 
 		var obj = json.data.getCheese;
 		obj.objectID = obj._id
