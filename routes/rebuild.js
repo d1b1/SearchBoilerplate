@@ -45,10 +45,7 @@ module.exports = (req, res) => {
 		index
 			.addObjects(list)
 			.then((data) => {
-				console.log('Indexed', data);
-				var count = data.objectIDs.length;
-
-				res.status(200).send(`Rebuild all takeshape data to the index ${count}`)
+				res.status(200).send(`Rebuild all takeshape data to the index ${data.objectIDs.length}`)
 			})
 			.catch(err => {
 				console.log('Got an Eror', err);
