@@ -1,7 +1,7 @@
 const fetch = require('node-fetch').default;
 const _ = require('underscore')
-const algolia = require('./services/algolia');
-const takeshape = require('./services/takeshape')
+const algolia = require('../services/algolia');
+const takeshape = require('../services/takeshape')
 
 // Setup the index.
 const index = client.initIndex('cheese');
