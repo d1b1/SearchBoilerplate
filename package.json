@@ -7,8 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+	"engines": {
+    "node": "10.14.1",
+    "npm": "6.4.1"
+  },
+  "author": "Stephan Smith",
   "dependencies": {
     "algoliasearch": "^3.35.1",
     "express": "^4.17.1",
