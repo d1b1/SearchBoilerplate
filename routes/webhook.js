@@ -19,7 +19,7 @@ module.exports = function(req, res) {
 	}
 
 	const query = ` {
-		getCheese(_id: "${body.data.contentId}") {
+		get${body.data.contentTypeName}(_id: "${body.data.contentId}") {
 			_id
 			name
 			source
@@ -33,6 +33,7 @@ module.exports = function(req, res) {
 
 	takeshape(query).then(result => {
 
+		console.log(result.data);
 		var obj = result.data.getCheese;
 		obj.objectID = obj._id
 
