@@ -5,7 +5,8 @@ const takeshape = require('../services/takeshape')
 module.exports = function(req, res) {
 
 	// Get the Body data.
-	var body = JSON.parse(event.body)
+	console.log(typeof req.body);
+	var body = JSON.parse(req.body)
 
 	// Echo what is happening.
 	console.log('Action', body.action, 'Body', body);
