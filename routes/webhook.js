@@ -31,6 +31,8 @@ module.exports = function(req, res) {
 		}
 	}`;
 
+	console.log(query);
+	
 	takeshape(query).then(result => {
 
 		console.log(result.data);
