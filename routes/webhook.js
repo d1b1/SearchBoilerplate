@@ -1,11 +1,14 @@
 const _ = require('underscore')
 const algolia = require('../services/algolia');
 const takeshape = require('../services/takeshape')
+const titleCase = require('title-case')
 
 module.exports = function(req, res) {
 
 	// Echo what is happening.
 	var body = req.body
+	body.data.queryName = 'get' + titleCase(body.data.contentTypeName)
+
 	console.log('Action', body.action, 'Body', body);
 
 	// Set the index for the content type.
@@ -18,9 +21,8 @@ module.exports = function(req, res) {
 		})
 	}
 
-	//${body.data.contentTypeName}
 	var query = ` {
-		get${body.data.contentTypeName}(_id: "${body.data.contentId}") {
+		get${body.data.queryName}(_id: "${body.data.contentId}") {
 			_id
 			name
 			source
@@ -38,7 +40,7 @@ module.exports = function(req, res) {
 
 		console.log(result);
 
-		var obj = result.data.getCheese;
+		var obj = result.data[body.data.queryName];
 		obj.objectID = obj._id
 
 		index.addObject(obj, () => {
