@@ -43,6 +43,10 @@ module.exports = (req, res) => {
 
 	takeshape(query).then(result => {
 
+		if (!_.has(result.data, queryName)) {
+			return res.status(200).message(`Sorry, could not find the content type ${req.query.contentType}. Check your content type again.`)
+		}
+
 		var items = result.data[queryName].items
 		var list = [];
 
