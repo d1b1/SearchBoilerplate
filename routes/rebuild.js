@@ -57,7 +57,7 @@ module.exports = (req, res) => {
 		index
 			.addObjects(list)
 			.then((data) => {
-				res.status(200).send(`Rebuild all takeshape data to the index ${req.query.contentType}, having ${data.objectIDs.length} records.`)
+				res.status(200).send(`Rebuild all takeshape data to the index "${req.query.contentType}", having ${data.objectIDs.length} records.`)
 			})
 			.catch(err => {
 				console.log('Got an Eror', err);
