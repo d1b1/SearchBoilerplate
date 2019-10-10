@@ -18,3 +18,9 @@ This creates two endpoints.
 
 #### Index Names
 This code creates an index in Algolia using the Takeshape content Id.
+
+### Stack Elements
+- Takeshape.io - Content-as-a-Service - Provide data modeling UI.
+- Algolia.com - Search-as-a-Service - Provides Search Index.
+- Heroku.com - Webhook endpoint hosting.
+
