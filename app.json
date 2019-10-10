@@ -1,0 +1,7 @@
+{
+  "name": "Search Engine Webhooks",
+  "description": "Create a simple ExpressJS app to supply Takeshape Webhooks to push data to Aloglia.",
+  "repository": "https://github.com/d1b1/Formaggio-Webhooks",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "takeshape", "webhooks", "algolia"]
+}
