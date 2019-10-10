@@ -1,39 +1,49 @@
 const fetch = require('node-fetch').default;
 const _ = require('underscore')
+const titleCase = require('title-case')
+
+// Services
 const algolia = require('../services/algolia');
 const takeshape = require('../services/takeshape')
 
 // Setup the index.
 const index = algolia.initIndex('cheese');
 
-var query = `{
-	getCheeseList {
-		items {
-			_id
-			name
-			characteristics {
-				aged
-				covering
-				flavors
-				milk
-				rennetType
-				standardsAndProcessing
-				style
-				texture
-			}
-			description
-		}
-	}
-}
-`
-
 module.exports = (req, res) => {
 
-	console.log('ddd', req.query);
-	
+	if (!req.query.contentType) {
+		res.status(200).send('Sorry you need to the the content type. ?contentType=cheese')
+		return
+	}
+
+	// Set the query name.
+	var queryName = 'get' + titleCase(req.query.contentType) + 'List'
+
+	// Set the Query for the content type.
+	var query = `{
+		${queryName} {
+			items {
+				_id
+				name
+				characteristics {
+					aged
+					covering
+					flavors
+					milk
+					rennetType
+					standardsAndProcessing
+					style
+					texture
+				}
+				description
+			}
+		}
+	}
+	`
+
 	takeshape(query).then(result => {
 
-		var items = result.data.getCheeseList.items
+		var items = result.data[queryName].items
 		var list = [];
 
 		// Loop the fields and set the data as needed.
@@ -47,7 +57,7 @@ module.exports = (req, res) => {
 		index
 			.addObjects(list)
 			.then((data) => {
-				res.status(200).send(`Rebuild all takeshape data to the index ${data.objectIDs.length}`)
+				res.status(200).send(`Rebuild all takeshape data to the index ${req.query.contentType}, having ${data.objectIDs.length} records.`)
 			})
 			.catch(err => {
 				console.log('Got an Eror', err);
