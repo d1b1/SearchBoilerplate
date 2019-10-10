@@ -22,7 +22,7 @@ module.exports = function(req, res) {
 	}
 
 	var query = ` {
-		get${body.data.queryName}(_id: "${body.data.contentId}") {
+		${body.data.queryName}(_id: "${body.data.contentId}") {
 			_id
 			name
 			source
@@ -33,8 +33,6 @@ module.exports = function(req, res) {
 			}
 		}
 	}`;
-
-	console.log('qiery', query);
 
 	takeshape(query).then(result => {
 
