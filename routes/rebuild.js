@@ -45,7 +45,7 @@ module.exports = (req, res) => {
 
 		// Check if we have the content type in the results.
 		if (!_.has(result.data, queryName)) {
-			console.log(result);
+			console.log('Dump the query result', result);
 			return res.status(200).send(`Sorry, could not find the content type "${req.query.contentType}". (${queryName}) Check your content type again.`)
 		}
 
