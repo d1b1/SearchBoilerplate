@@ -7,28 +7,30 @@ const takeshape = require('../services/takeshape')
 const index = algolia.initIndex('cheese');
 
 var query = `{
-	 getCheeseList {
-			items {
-				_id
-				name
-				characteristics {
-		      aged
-		      covering
-		      flavors
-		      milk
-		      rennetType
-		      standardsAndProcessing
-		      style
-		      texture
-		    }
-		    description
+	getCheeseList {
+		items {
+			_id
+			name
+			characteristics {
+				aged
+				covering
+				flavors
+				milk
+				rennetType
+				standardsAndProcessing
+				style
+				texture
 			}
+			description
 		}
 	}
+}
 `
 
 module.exports = (req, res) => {
 
+	console.log('ddd', req.query);
+	
 	takeshape(query).then(result => {
 
 		var items = result.data.getCheeseList.items
