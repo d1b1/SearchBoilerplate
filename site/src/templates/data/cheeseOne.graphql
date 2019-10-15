@@ -1,0 +1,6 @@
+query {
+  page: getCheese {
+		_id
+    name
+  }
+}
