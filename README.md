@@ -1,6 +1,5 @@
-# Formaggio Webhooks
-This repo provides a the node.js API code setting up Webhooks on Heroku. This codebased provides
-the webhook code to accept webhook events from Takeshape.io and populate data in Algolia.
+# Formaggio Search Engine
+This repo provides a the node.js API code setting up Webhooks on Heroku. This codebased provides the webhook code to accept webhook events from Takeshape.io and populate data in Algolia.
 
 #### FYI - Formagg.io is a cheese search engine. This repo is used for a 'Mechanics of Search' class at Lesley University.
 
