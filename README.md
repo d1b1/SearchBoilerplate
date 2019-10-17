@@ -1,7 +1,5 @@
-# Formaggio Search Engine
+# Search Engine Boilerplate
 This repo provides a the node.js API code setting up Webhooks on Heroku. This codebased provides the webhook code to accept webhook events from Takeshape.io and populate data in Algolia.
-
-#### FYI - Formagg.io is a cheese search engine. This repo is used for a 'Mechanics of Search' class at Lesley University.
 
 #### Environment Settings
 The following at
@@ -26,8 +24,3 @@ This code creates an index in Algolia using the Takeshape content Id.
 
 ### Costs
 All three of these services offer free plans that allow students to build an end to end search engine without spending a dime.
-
-### Want to get Started?
-This little helper will let you spin up a Heroku app.
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
