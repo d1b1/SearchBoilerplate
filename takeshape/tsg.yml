@@ -7,21 +7,14 @@ routes:
     path: /
     template: pages/index.html
 
-  cheeseList:
-    path: /cheeses
-    template: pages/cheeseList.html
-    context: data/cheese.graphql
-
-  makers:
-    path: /makers
-    template: pages/makers.html
-    context: data/agent.graphql
-
   tools:
     path: /tools
     template: pages/tools.html
 
   search:
-    path: /search
-    context: data/cheese.graphql
-    template: pages/search.html
+    path: /autocomplete
+    template: pages/autocomplete.html
+
+  faceted:
+    path: /faceted
+    template: pages/faceted.html
